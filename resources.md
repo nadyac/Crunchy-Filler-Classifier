@@ -1,0 +1,2 @@
+- [Classifying Text with Python](http://www.nltk.org/book/ch06.html)
+  - Examples of technques used to classify documents and textual data using python

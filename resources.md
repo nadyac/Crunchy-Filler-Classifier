@@ -1,2 +1,4 @@
 - [Classifying Text with Python](http://www.nltk.org/book/ch06.html)
   - Examples of techniques used to classify documents and textual data using python
+- [Python NLTK Sentiment Analysis] (http://text-processing.com/demo/sentiment/)
+  - A working demo of sentiment analysis of text using python NLTK library for natural language processing 

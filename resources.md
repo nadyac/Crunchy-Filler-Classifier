@@ -2,3 +2,5 @@
   - Examples of techniques used to classify documents and textual data using python
 - [Python NLTK Sentiment Analysis] (http://text-processing.com/demo/sentiment/)
   - A working demo of sentiment analysis of text using python NLTK library for natural language processing 
+- [Build Your Own Pokedex with Django, MMS, and PokeAPI](https://www.twilio.com/blog/2014/11/build-your-own-pokedex-with-django-mms-and-pokeapi.html)
+  - A walkthrough of how to create a Django and Python web app that simulates a pokedex by using the Twilio service and PokeAPI. 

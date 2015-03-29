@@ -24,7 +24,7 @@ def writeToCSV(csvFileName, dirPath, listOfComments):
 	csvFileName = csvFileName.replace("!", "")
 	csvFileName = csvFileName.replace(",", "")
 	csvFileName = csvFileName + '.csv'
-	print "created" + csvFileName
+	print "created " + csvFileName
 
 	# if the directory for the csv file doesn't exist, create it, then write to it
 	if os.path.exists(dirPath):

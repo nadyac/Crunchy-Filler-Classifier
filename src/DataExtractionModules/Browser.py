@@ -20,8 +20,8 @@ from selenium.webdriver.common.keys import Keys
 import os
 import re
 
-	# Set up Selenium and the browser params
-	# NOTE: this assumes Firefox is 
+# Set up Selenium and the browser params
+# NOTE: this assumes Firefox is installed
 def setupBrowser():
 	br = mechanize.Browser()
 	br.set_handle_robots(False)

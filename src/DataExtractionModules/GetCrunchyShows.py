@@ -6,8 +6,8 @@ def getShows():
 	#show = 'kuroko\'s Basketball' 
 	#show = 'yona of the dawn'
 	#show = 'Angel Beats'
-	#show = 'Naruto Shippuden'
-	show = 'silver spoon'
+	show = 'Naruto Shippuden'
+	#show = 'silver spoon'
 	"""NOTE: actual show variable will be obtained dynamically from CR or the db
 	"""
 	show = show.replace(" ", "-") # replace whitespace in the title with -

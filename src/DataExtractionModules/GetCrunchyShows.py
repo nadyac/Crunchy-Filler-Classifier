@@ -6,10 +6,9 @@ def getShows():
 	#show = 'kuroko\'s Basketball' 
 	#show = 'yona of the dawn'
 	#show = 'Angel Beats'
-	show = 'Naruto Shippuden'
-	#show = 'silver spoon'
-	"""NOTE: actual show variable will be obtained dynamically from CR
-	actual show variable needs to be scanned for illegal characters (apostrophes)
+	#show = 'Naruto Shippuden'
+	show = 'silver spoon'
+	"""NOTE: actual show variable will be obtained dynamically from CR or the db
 	"""
 	show = show.replace(" ", "-") # replace whitespace in the title with -
 	show = show.replace("'", "")
@@ -17,7 +16,9 @@ def getShows():
 	show = show.replace("!", "")
 	show = show.replace(",", "")
 	show = show.replace(".", "")
-
+	show = show.replace("(", "")
+	show = show.replace(")", "")
+	
 	listOfShows = []
 	listOfShows.append(show) #eventually will loop through shows 
 	return listOfShows

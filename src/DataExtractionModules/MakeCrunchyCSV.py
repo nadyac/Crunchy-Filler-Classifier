@@ -23,6 +23,9 @@ def writeToCSV(csvFileName, dirPath, listOfComments):
 	csvFileName = csvFileName.replace("?", "")
 	csvFileName = csvFileName.replace("!", "")
 	csvFileName = csvFileName.replace(",", "")
+	csvFileName = csvFileName.replace("(", "")
+	csvFileName = csvFileName.replace(")", "")
+
 	csvFileName = csvFileName + '.csv'
 	print "created " + csvFileName
 

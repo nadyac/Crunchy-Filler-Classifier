@@ -3,59 +3,50 @@
 # 	Firefox Browser, Python, pip, Selenium, Mechanize,  requests lib, other modules
 
 # Import other modules
+import Browser
 import GetCrunchyComments
 import GetCrunchyShows
 import GetCrunchyEpisodes
+import LatestEpisodeGetter
 import MakeCrunchyDirs
 import MakeCrunchyCSV
 
-# Selenium imports
-import mechanize
-import requests
-import time
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchAttributeException
-from selenium.webdriver.common.keys import Keys
-import os
-import re
+def extractData(browser):
+	baseURL = 'http://www.crunchyroll.com/'
 
-# Set up Selenium and the browser params
-# NOTE: this assumes Firefox is installed
-br = mechanize.Browser()
-br.set_handle_robots(False)
-br.set_handle_refresh(False)
-br.addheaders = [{'User-agent', 'Firefox'}]
+	# Get the shows whose episode comments we want to extract
+	listOfShowTitles = GetCrunchyShows.getShows()
+	showTitle = listOfShowTitles[0] # loop through these later?*******************
 
-browser = webdriver.Firefox()
-baseURL = 'http://www.crunchyroll.com/'
+	showURL = baseURL + showTitle
 
-# Get the shows whose episode comments we want to extract
-listOfShowTitles = GetCrunchyShows.getShows()
-showTitle = listOfShowTitles[0] # loop through these later?*******************
+	# Get the episodes (urls) for the show we specified
+	episodeLinksAndTitles = GetCrunchyEpisodes.getEpisodes(browser, showURL)
 
-showURL = baseURL + showTitle
+	listOfEpisodeLinks = episodeLinksAndTitles[0]
+	listOfEpisodeTitles = episodeLinksAndTitles[1]
 
-# Get the episodes (urls) for the show we specified
-episodeLinksAndTitles = GetCrunchyEpisodes.getEpisodes(browser, showURL)
+	# Create directories for each show and subdirs for each episode on the list
+	showsDirectory = 'Shows/'
+	index = 0
 
-listOfEpisodeLinks = episodeLinksAndTitles[0]
-listOfEpisodeTitles = episodeLinksAndTitles[1]
+	# Get the latest episode and place it in a directory
 
-# Create directories for each show and subdirs for each episode on the list
-showsDirectory = 'Shows/'
-index = 0
 
-# Get the comments for each of the episodes
-for episodeLink in listOfEpisodeLinks:
+	# Get the comments for each of the episodes ***NOTE WE ONLY CLASSIFY THE LATEST EPISODE.***
+	for episodeLink in listOfEpisodeLinks:
 
-	#make a directory for each episode to store the comments
-	episodesDir = MakeCrunchyDirs.makeDirectories(showsDirectory+showTitle)
+		#make a directory for each episode to store the comments
+		episodesDir = MakeCrunchyDirs.makeDirectories(showsDirectory+showTitle)
 
-	#Extract the comments
-	listOfComments = GetCrunchyComments.getComments(browser, episodeLink)
+		#Extract the comments
+		listOfComments = GetCrunchyComments.getComments(browser, episodeLink)
 
-	# Write the list of comments and episodes to a csv file
-	MakeCrunchyCSV.writeToCSV(listOfEpisodeTitles[index], episodesDir, listOfComments)
-	index = index +1
+		# Write the list of comments and episodes to a csv file
+		MakeCrunchyCSV.writeToCSV(listOfEpisodeTitles[index], episodesDir, listOfComments)
+		index = index +1
 
-print "Done."
+	print "Done."
+
+browser = Browser.setupBrowser()
+extractData(browser)

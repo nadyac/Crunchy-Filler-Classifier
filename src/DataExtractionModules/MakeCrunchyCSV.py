@@ -42,10 +42,5 @@ def writeToCSV(csvFileName, dirPath, listOfComments):
 				except UnicodeError as err:
 					pass
 	else:
-		print "in else statement."
 		MakeCrunchyDirs.makeDirectories(dirPath)
 		writeToCSV(csvFileName, dirPath, listOfComments)
-
-# for testing
-#commentsList = ['how cool', 'that episode was nice']
-#writeToCSV('episode title', 'Shows/Angel-Beats/',commentsList)

@@ -7,11 +7,8 @@
 import Browser
 import GetCrunchyComments
 import GetCrunchyShows
-import GetAllCrunchyEpisodes
-import LatestEpisodeGetter
 import MakeCrunchyDirs
 import MakeCrunchyCSV
-import GetAllCrunchyEpisodes
 
 #------------------------------------------------------------------------
 # getLatestEpisode - Extracts the latest episode for the specified show
@@ -73,6 +70,9 @@ def extractData(browser):
 		
 		episodeLink = episodeLinkAndTitle[0]
 		episodeTitle = episodeLinkAndTitle[1]
+
+		print episodeLink
+		print episodeTitle
 
 		# Declare parent directory for all the shows
 		showsDirectory = 'Shows/'

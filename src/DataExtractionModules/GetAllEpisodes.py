@@ -4,7 +4,6 @@ import Browser
 import GetCrunchyComments
 import GetCrunchyShows
 import MakeCrunchyDirs
-import GetCrunchyComments
 import MakeCrunchyCSV
 
 '''------------------------------------------------------------------------
@@ -79,6 +78,8 @@ def getAllEpisodes(browser):
 
 		listOfEpisodeLinks = episodeLinksAndTitles[0]
 		listOfEpisodeTitles = episodeLinksAndTitles[1]
+
+		print listOfEpisodeTitles
 
 		# Declare parent dir for all the shows
 		showsDirectory = 'Shows/'

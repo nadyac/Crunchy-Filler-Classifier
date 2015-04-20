@@ -1,0 +1,42 @@
+#Header0{
+    height: 20px;
+    background-color: #e56e2e;
+    border-bottom: #30302e 1px solid;
+    
+}
+
+.Header1{
+    background: #0B615E;
+    border-bottom: #30302e 2px solid;
+    height:70px; 
+}
+
+.search-title{
+    color: white;
+    position: relative;
+    float:right;
+    padding-right:10px;
+    padding-top: 5px;
+}
+
+#search-form{
+    position:absolute;
+    right:5px;
+    top:60px;
+    float:right;
+    padding-right:0px;
+
+}
+.container-inline{
+    height: 40px;  
+}
+
+#header-title{
+    width:40%;
+    position:relative;
+    top:10px;
+    font-size: 40px;
+    color: white;
+    float: left;
+}
+

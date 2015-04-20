@@ -1,0 +1,23 @@
+.episodeTable, th, td{
+    position: relative;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th{
+    color:#0B615E;
+}
+
+.filler{
+    background-image: url('../imgs/redbar.jpg'); 
+    color: white;
+}
+
+.filler-negative, a{
+
+}
+
+.negative{
+    background-image: url('../imgs/redbar.jpg'); 
+    color: white;
+}

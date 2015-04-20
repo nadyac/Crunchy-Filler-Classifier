@@ -1,0 +1,991 @@
+html {
+    -webkit-text-size-adjust: none;
+}
+body {
+    background: #ffffff;
+    color: #3e3c3c;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+}
+a:link,
+a:visited {
+    color: #2785c1;
+    outline: 0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+li a.active {
+    color: #2785c1;
+}
+h1,
+h2,
+h3,
+h4 {
+    color: #3e3c3e;
+    font-family: 'Signika', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0 0 20px 0;
+}
+p {
+    margin: 0 0 20px 0;
+}
+div.messages {
+    margin: 0 0 30px 0;
+}
+div.tabs {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+ul.tabs {
+    background: none;
+    border: none;
+    font-size: 13px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+ul.tabs li {
+    background: none;
+    border: none;
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 0;
+}
+ul.tabs li a {
+    background: #2785c1;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    display: block;
+    margin: 0;
+    padding: 7px 15px;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+ul.tabs li a:hover {
+    background: #e56e2e;
+    border: none;
+    display: block;
+    margin: 0;
+    padding: 7px 15px;
+}
+ul.tabs li.active a {
+    background: #e56e2e;
+    border: none;
+    box-shadow: none;
+    color: #ffffff;
+    display: block;
+    margin: 0;
+    padding: 7px 15px;
+    text-decoration: none;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.form-item {
+    margin: 0 0 30px 0;
+    overflow: hidden;
+}
+.text-format-wrapper .form-item {
+    margin: 0;
+}
+.form-required,
+.form-item label {
+    color: #3e3c3c;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 13px;
+}
+.form-item label {
+    margin-bottom: 5px;
+    margin-left: 0;
+}
+.form-item .form-textarea,
+.form-item .form-text {
+    background: #ffffff;
+    border: #CFCFCF 1px solid;
+    border-radius: 0;
+    color: #3e3c3c;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 15px;
+    outline: none;
+    margin: 0 0 0 0;
+    padding: 16px 16px;
+    -webkit-appearance: none;
+}
+.form-item .description {
+    background: #f6f6dc;
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 10px;
+    padding: 5px;
+}
+.text-format-wrapper .description {
+    background: #f6f6dc;
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+.form-actions {
+    margin: 0;
+    overflow: hidden;
+}
+.container-inline .form-submit,
+.comment-form .form-submit,
+.form-actions .form-submit {
+    background: #2785c1;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    font-weight: 300;
+    float: left;
+    line-height: 15px;
+    outline: none;
+    padding: 15px 30px;
+    text-decoration: none;
+    -webkit-appearance: none;
+}
+.container-inline .form-submit:hover,
+.comment-form .form-submit:hover,
+.form-actions .form-submit:hover {
+    background-color: #e56e2e;
+}
+.filter-wrapper {
+    display: none;
+}
+
+#search-block-form .container-inline {
+    overflow: hidden;
+}
+#search-block-form .form-item {
+    float: left;
+    margin: 0;
+    padding: 0 1px 1px 0;
+}
+#search-block-form .form-actions {
+    float: left;
+    margin: 0 0 0 -25px;
+}
+#search-block-form .form-item .form-text {
+    background: #f6f7f7;
+    border: 0;
+    box-shadow: 1px 1px #ac5d32;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 5px 10px 5px 1px;
+    width: 159px;
+}
+#search-block-form .form-actions .form-submit {
+    background: transparent url(../../../all/themes/afl/i/mag.png) center center no-repeat;
+    background-image: url(../../../all/themes/afl/i/mag.svg), none;
+    border-radius: 0;
+    height: 27px;
+    letter-spacing: 1px;
+    margin: 0 0 0 0;
+    padding: 0;
+    text-indent: -9999px;
+    width: 25px;
+}
+#Header {
+    background: #e56e2e;
+    border-bottom: #30302e 2px solid;
+
+    margin-bottom: 0px;
+}
+body.front #Header {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+#Header > .Inner {
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 960px;
+}
+#Header > .Inner > .MobileNav {
+    display: none;
+}
+#Header > .Inner > .Left {
+    float: left;
+    padding-top: 4px;
+    width: 250px;
+}
+#Header > .Inner > .Left img {
+    display: block;
+}
+#Header > .Inner > .Middle {
+    float: left;
+    padding-top: 4px;
+    width: 510px;
+}
+#Header > .Inner > .Middle ul.menu {
+    float: right;
+    list-style: none;
+    list-style-image: none;
+    margin: 0 30px 0 0;
+    overflow: hidden;
+    padding: 0;
+}
+#Header > .Inner > .Middle ul.menu li {
+    float: left;
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+#Header > .Inner > .Middle ul.menu li a {
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    padding: 0 10px;
+}
+#Header > .Inner > .Middle ul.menu li a.active-trail {
+    text-decoration: underline;
+}
+#Header > .Inner > .Right {
+    float: left;
+    width: 200px;
+}
+.FrontMessage {
+    border-bottom: #30302e 2px solid;
+    background: #0B615E;
+    margin: 0 0 60px 0;
+    padding: 30px 0;
+}
+.FrontMessage > .Inner {
+    margin: 0 auto;
+    width: 960px;
+}
+.FrontMessage h1 {
+    color: #ffffff;
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+.FrontMessage h1 span {
+    border-bottom: #b64c13 4px solid;
+}
+.FrontMessage p {
+    color: #ffffff;
+    font-size: 21px;
+    margin: 0 0 60px 0;
+    text-align: center;
+}
+.FrontMessage .Buttons {
+    margin: 0 auto;
+    width: 950px;
+    align-items: center;
+}
+.FrontMessage .Buttons a {
+    border: #efa47c 2px solid;
+    position: relative;
+    left:30%;
+    border-radius: 3px;
+    color: #ffffff;
+    /*float: right;*/
+    font-size: 20px;
+    font-weight: 300;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+.FrontMessage .Buttons a:hover {
+    color: #b64c13;
+    background-color: #efa47c;
+    text-decoration: none;
+}
+/*.FrontMessage .Buttons a:first-child {
+    float: left;
+}*/
+.FrontMessage .Buttons a{
+    margin-right: 30px;
+}
+.Filler {
+    margin-bottom: 60px;
+}
+.Filler h2 {
+    color: #848181;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.Filler .Bubbles .Bubble {
+    float: left;
+    padding: 0 10px;
+    width: 280px;
+}
+.Filler .Bubbles .Sep {
+    background: url(../../../all/themes/afl/i/bubble-sep.jpg) center left no-repeat;
+    float: left;
+    height: 200px;
+    width: 15px;
+}
+.Filler .Bubbles .Bubble img {
+    display: block;
+    margin: 0 40px 15px 40px;
+}
+.Filler .Bubbles .Bubble p {
+    color: #848181;
+    font-size: 17px;
+    text-align: center;
+    margin: 0;
+}
+#Content {
+    margin: 0 auto 60px auto;
+    width: 960px;
+}
+#Content > .Left {
+    float: left;
+    width: 630px;
+}
+#Content > .Right {
+    float: right;
+    width: 300px;
+}
+#block-system-main .search-form {
+    display: none;
+}
+#Content > .Left .block .item-list .Items {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+#Content > .Left .block .item-list .Items span.Label {
+    color: #848181;
+    font-weight: bold;
+}
+#Content > .Left .block .item-list .Items li {
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    list-style: none;
+    list-style-image: none;
+    line-height: 1.3;
+    margin: 0;
+    overflow: hidden;
+    padding: 8px 0;
+}
+#Content > .Left .block .item-list .Items li.last {
+    border-bottom: none;
+}
+#Content > .Left .block .item-list .Items li .Image {
+    float: left;
+    margin-right: 15px;
+}
+#Content > .Left .block .item-list .Items li .Image img {
+    display: block;
+}
+#Content > .Left .block .item-list .Items li .Date {
+    color: #848181;
+    font-size: 12px;
+}
+#Content > .Right h2 {
+    background: #f7f7f7;
+    border-bottom: #dedede 1px solid;
+    color: #3e3c3c;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    text-shadow: 0 1px 0 #fff;
+    text-transform: uppercase;
+}
+#Content > .Right .block {
+    border: #dedede 1px solid;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+#Content > .Right .block .content {
+    padding: 0 15px;
+}
+#Content > .Right #block-afl-general-adsense-1,
+#Content > .Right #block-afl-general-adsense-2 {
+    border: 0;
+    border-radius: 0;
+}
+#Content > .Right #block-afl-general-adsense-1 .content,
+#Content > .Right #block-afl-general-adsense-2 .content {
+    padding: 0;
+}
+#Content > .Right .block .item-list {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+#Content > .Right .block .item-list ul {
+    margin: 0 0 10px 0;
+}
+#Content > .Right .block .item-list span.Label {
+    color: #848181;
+    font-weight: bold;
+}
+#Content > .Right .block .item-list li {
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    list-style: none;
+    list-style-image: none;
+    line-height: 1.3;
+    margin: 0;
+    overflow: hidden;
+    padding: 8px 0;
+}
+#Content > .Right .block .item-list li.last {
+    border-bottom: none;
+}
+#Content > .Right .block .item-list li .Image {
+    float: left;
+    margin-right: 15px;
+}
+#Content > .Right .block .item-list li .Image img {
+    display: block;
+}
+#Content > .Right .block .item-list li .Date {
+    color: #848181;
+    font-size: 12px;
+}
+#Content > .Right .block .MoreLink {
+    border: #eee 1px solid;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 18px;
+    padding: 5px 0;
+    text-align: center;
+}
+.node-anime > .Details {
+    margin-bottom: 20px;
+}
+.node-anime > .Details > .Left {
+    float: left;
+}
+.node-anime > .Details > .Left .field-name-field-image {
+    margin-bottom: 15px;
+}
+.node-anime > .Details > .Left .field-name-field-image img {
+    display: block;
+}
+.node-anime > .Details > .Left > .Social > iframe {
+    float: left;
+}
+.node-anime > .Details > .Left > .Social > .sharethis-wrapper {
+    float: right;
+}
+.node-anime > .Details > .Right {
+    float: right;
+    width: 400px;
+}
+.node-anime > .Details > .Right > h1 {
+    margin-bottom: 10px;
+}
+.node-anime > .Details > .Right > h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.node-anime > .Details > .Right > .Date {
+    background: url(../../../all/themes/afl/i/clock.png) center left no-repeat;
+    background-image: url(../../../all/themes/afl/i/clock.svg), none;
+    color: #797979;
+    font-size: 12px;
+    line-height: 12px;
+    height: 13px;
+    margin-bottom: 20px;
+    padding-top: 1px;
+    padding-left: 20px;
+}
+.node-anime > .Details > .Right .field-name-body p {
+    color: #848181;
+    font-size: 14px;
+}
+.node-anime > .Details > .Right > .item-list {
+    border-top: #e2e2e2 1px solid;
+    border-bottom: #e2e2e2 1px solid;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+.node-anime > .Details > .Right > .item-list ul {
+    font-size: 11px;
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+.node-anime > .Details > .Right > .item-list ul li {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 2px 0;
+}
+.node-anime > .Details > .Right > .item-list ul li .Label {
+    float: left;
+    font-weight: 600;
+    width: 150px;
+}
+.node-anime > .Details > .Right > .item-list ul li .Value {
+    float: left;
+    width: 250px
+}
+.node-anime > .Details > .Right > .Contributors > a {
+    margin-right: 10px;
+}
+.node-anime > .Details > .Right > .Contributors p {
+    color: #848181;
+    font-size: 12px;
+    margin: 0;
+}
+#Filters {
+    border-bottom: #CFCFCF 1px solid;
+    font-size: 12px;
+    height: 24px;
+    line-height: 12px;
+    margin-bottom: 20px;
+}
+#Filters > span {
+    color: #727272;
+    float: left;
+    font-weight: bold;
+    padding: 5px 10px 5px 0;
+}
+#Filters a {
+    background: #efeae7;
+    border: #efeae7 1px solid;
+    border-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #727272;
+    float: left;
+    height: 12px;
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+#Filters a.Active {
+    background: #fff;
+    border: #CFCFCF 1px solid;
+    border-bottom: #fff 1px solid;
+    height: 13px;
+}
+#Condensed {
+    border: 1px solid #CFCFCF;
+    color: #3e3c3c;
+    font-size: 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+#Condensed .Label {
+    border-bottom: 1px solid #CFCFCF;
+    background-color: #dedede;
+    display: block;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #fff;
+    overflow: hidden;
+    padding: 5px 10px;
+}
+#Condensed .Label .Desc {
+    color: #9a9999;
+    font-size: 11px;
+    font-weight: normal;
+    float: right;
+    padding: 2px 0;
+    text-shadow: none;
+}
+#Condensed .Episodes {
+    display: block;
+    padding: 5px 10px;
+}
+#Condensed .Episodes > a {
+    color: #3e3c3c;
+    white-space: nowrap;
+}
+#Condensed .filler {
+    background: #FDE9EA;
+}
+#Condensed .filler .Label {
+    border-top: 1px solid #CFCFCF;
+}
+#Condensed .filler .Episodes > a {
+    color: #A14A40;
+}
+.TitleExtra {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.TitleExtra h2 {
+    font-size: 25px;
+    float: left;
+    line-height: 25px;
+    margin-bottom: 0;
+}
+.TitleExtra > span {
+    color: #797979;
+    float: right;
+    font-size: 13px;
+    line-height: 13px;
+    margin-top: 12px;
+}
+#TitleToggle {
+    color: #e56e2e;
+    float: right;
+    font-size: 13px;
+    line-height: 13px;
+    margin-top: 12px;
+}
+form.Jump {
+    margin-bottom: 5px;
+    text-align: right;
+}
+form.Jump label {
+    display: inline;
+    font-size: 13px;
+    font-weight: normal;
+}
+table.EpisodeList {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 1px solid #CFCFCF;
+    border-left: 1px solid #CFCFCF;
+    border-right: 0;
+    border-bottom: 0;
+    margin-bottom: 20px;
+    width: 100%;
+}
+table.EpisodeList td,
+table.EpisodeList th {
+    border-right: 1px solid #CFCFCF;
+    border-bottom: 1px solid #CFCFCF;
+    text-align: center;
+    padding: 5px 10px;
+}
+table.EpisodeList th {
+    background-color: #dedede;
+    text-shadow: 0 1px 0 #fff;
+    text-align: left;
+    padding: 5px 25px 5px 10px
+}
+
+table.EpisodeList tr.even,
+table.EpisodeList tr.odd {
+    background: none;
+    border: none;
+    padding: 0;
+}
+table.EpisodeList td.active {
+    background: none;
+}
+table.EpisodeList td.Title {
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: left;
+}
+table.EpisodeList tr.info td {
+    text-align: left;
+    padding: 20px;
+}
+table.EpisodeList.NoTitles td.Title a {
+    background: #2785c1;
+}
+table.EpisodeList td.Title img {
+    cursor: pointer;
+    float: right;
+    margin: 3px 0 0 10px;
+}
+table.EpisodeList td.Date {
+    white-space: nowrap;
+}
+table.EpisodeList th.Info,
+table.EpisodeList td.Info {
+    display: none;
+}
+table.EpisodeList tr.filler {
+    background: #FDE9EA;
+    color: #A14A40;
+}
+table.EpisodeList.NoTitles tr.filler td.Title span {
+    background: #A14A40;
+}
+table.EpisodeList tr td.Type span {
+    background: #91BD09;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    line-height: 9px;
+    padding: 4px 5px;
+    text-transform: uppercase;
+}
+table.EpisodeList tr.filler td.Type span {
+    background: #A14A40;
+}
+.node-episode .field {
+    margin-bottom: 7px;
+}
+.node-episode .field-label-hidden {
+    overflow: hidden;
+}
+.node-episode .field-label {
+    float: left;
+    width: 25%;
+}
+.node-episode .field-items {
+    float: left;
+    width: 75%;
+}
+.node-episode .field-label-hidden .field-items {
+    float: none;
+    width: auto;
+}
+.node-episode h2 {
+    font-size: 17px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.node-episode .Contributors > a {
+    margin-right: 10px;
+}
+.node-episode .Contributors p {
+    color: #848181;
+    font-size: 12px;
+    margin: 0;
+}
+.EpisodePager {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.EpisodePager a {
+    float: left;
+    font-size: 13px;
+    text-align: right;
+    width: 50%;
+}
+.EpisodePager a:first-child {
+    text-align: left;
+}
+.profile {
+    overflow: hidden;
+}
+table.ProfileList {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 1px solid #CFCFCF;
+    border-left: 1px solid #CFCFCF;
+    border-right: 0;
+    border-bottom: 0;
+    font-size: 13px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+table.ProfileList td,
+table.ProfileList th {
+    border-right: 1px solid #CFCFCF;
+    border-bottom: 1px solid #CFCFCF;
+    text-align: left;
+    padding: 5px 10px;
+}
+table.ProfileList th {
+    background-color: #dedede;
+    text-shadow: 0 1px 0 #fff;
+    text-align: left;
+    padding: 5px 25px 5px 10px
+}
+table.ProfileList tr.even,
+table.ProfileList tr.odd {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+@media all and (max-width: 640px) {
+    div.tabs {
+        font-size: 11px;
+        margin-bottom: 20px;
+    }
+    ul.tabs {
+        font-size: 11px;
+    }
+    ul.tabs li {
+        display: block;
+        float: none;
+        margin: 0 0 5px 0;
+        overflow: hidden;
+    }
+    ul.tabs li a {
+        float: left;
+    }
+    form {
+        margin-bottom: 30px;
+    }
+    .form-item {
+        padding: 0 1px;
+    }
+    .container-inline-date .form-item {
+        padding: 0 2px;
+    }
+    .container-inline-date .date-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .form-item label {
+        margin-left: -1px;
+    }
+    .form-item .form-textarea,
+    .form-item .form-text {
+        margin-left: -1px;
+        padding-left: 2%;
+        padding-right: 2%;
+        width: 96%;
+    }
+    .form-item .form-textarea {
+        width: 100%;
+    }
+    #search-block-form {
+        margin: 0 auto;
+        width: 200px;
+    }
+    #Header {
+        border-bottom: #30302e 1px solid;
+    }
+
+    #Header > .Inner > .Right {
+        background: #ec8954;
+        display: none;
+        float: left;
+        padding: 10px 0 10px 0;
+        width: 100%;
+    }
+    .FrontMessage {
+        border-bottom: #30302e 1px solid;
+        margin: 0 0 30px 0;
+        padding: 60px 0;
+    }
+    .FrontMessage > .Inner {
+        margin: 0;
+        padding: 0 10px;
+        width: auto;
+    }
+    .FrontMessage h1 {
+        font-size: 30px;
+        line-height: 1;
+        margin: 0 0 10px 0;
+    }
+    .FrontMessage h1 span {
+        border-bottom: none;
+    }
+    .FrontMessage p {
+        font-size: 16px;
+        margin: 0 0 30px 0;
+    }
+    .FrontMessage .Buttons {
+        width: 300px;
+    }
+    .FrontMessage .Buttons a {
+        border: #efa47c 1px solid;
+        font-size: 13px;
+        padding: 7px 15px;
+    }
+    .Filler {
+        margin-bottom: 30px;
+    }
+    .Filler h2 {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    .Filler .Bubbles .Bubble {
+        float: none;
+        margin-bottom: 20px;
+        padding: 0;
+        width: auto;
+    }
+
+    .Filler .Bubbles .Bubble img {
+        height: auto;
+        margin: 0 auto 10px auto;
+        width: 150px;
+    }
+    .Filler .Bubbles .Bubble p {
+        font-size: 15px;
+    }
+    #Content {
+        margin: 0 0 30px 0;
+        padding: 0 10px;
+        width: auto;
+    }
+    #Content > .Left {
+        float: none;
+        width: auto;
+    }
+    #Content > .Right {
+        float: none;
+        width: auto;
+    }
+    .node-anime > .Details > .Left {
+        float: none;
+        margin: 0 auto 10px auto;
+        width: 200px
+    }
+    .node-anime > .Details > .Left .field-name-field-image img {
+        height: auto;
+        margin: 0 auto;
+        width: 150px;
+    }
+    .node-anime > .Details > .Right {
+        float: none;
+        width: auto;
+    }
+    .node-anime > .Details > .Right > .item-list ul li .Label {
+        float: left;
+        font-weight: 600;
+        width: 150px;
+    }
+    .node-anime > .Details > .Right > .item-list ul li .Value {
+        float: left;
+        width: 150px
+    }
+    #Filters {
+        height: 36px;
+    }
+    #Filters a {
+        height: 24px;
+        margin-right: 2%;
+        padding-left: 1%;
+        padding-right: 1%;
+        text-align: center;
+        width: 28%;
+    }
+    #Filters a.Active {
+        height: 25px;
+    }
+    .TitleExtra h2 {
+        width: 50%;
+    }
+    .TitleExtra > span {
+        margin-top: 0;
+        width: 50%;
+    }
+    table.EpisodeList th.Date,
+    table.EpisodeList td.Date {
+        display: none;
+    }
+    .node-episode .field-label {
+        width: 50%;
+    }
+    .node-episode .field-items {
+        float: left;
+        width: 50%;
+    }
+
+}

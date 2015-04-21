@@ -8,29 +8,6 @@ import ReplaceCharsInString
 def getShows(show):
 	"""NOTE: actual show variable will be obtained dynamically from CR or the db
 	"""
-	#show1 = 'kuroko\'s Basketball' 
-	#show2 = 'Blue Exorcist'
-	#show3 = 'yona of the dawn'
-	#show4 = 'Angel Beats'
-	#show5 = 'Naruto Shippuden'
-	#show6 = 'Bleach'
-	#show7 = 'Another'
-	#show8 = 'Attack on Titan'
-	#show9 = 'silver spoon'
-	#show10 = 'Sword Art Online'
-
-	#random shows
-	#show11 = 'Break Ups'
-	#show12 = 'Fairy Tail'
-	#show13 = 'ixion saga DT'
-	#show14 = 'GLasslip'
-	#show15 = 'karasuma kyoko no jikenbo manga 25'
-	#show16 = 'kokoro connect'
-	#show17 = 'magic kaito 1412'
-	#show18 = 'oreimo'
-	#show19 = 'Durarara'
-	#show20 = 'rurouni kenshin'
-	
 	listOfRawShowTitles = [show]
 	listOfCleanShowTitles =[]
 

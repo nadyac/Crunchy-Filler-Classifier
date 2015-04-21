@@ -9,15 +9,49 @@ import sys
 sys.path.insert(0, '../')
 from DataModules import ReplaceCharsInString
 
-def classifyFillerOrCanon(ProbabilityOfFiller, document):
+'''
+----------------------------------------------------------------------------
+classifyFillerOrCanon - takes in a new episode's comments and its corresponding
+	prior probability of a filler and returns a Class = {Filler, NotFiller/Canon, Unknown}
+	
+	NOTE 1: Currently prior probability is set to 0.25 which was an average calculated
+	from a small sample of 20 shows. Of those 20 shows, 20,000 comments were extracted
+	to get the features of filler episodes used in this classifier.
 
+	NOTE 2: Currently, it is not performing a Naive Bayes because I need to create
+	and clean a dataset for Non-Filler episodes. Due to time constraints, this 
+	is not feasible at the moment. For the time being, the classifier uses the 
+	two features extracted from the sample of filler episode comments to classify.
+
+	NOTE 3: Classifier seems to perform well, even without the Naive Bayes.
+
+Inputs: 
+- probabilityOfFiller: (float), Probability of the given show having a filler episode
+- document: list of comments for the new episode
+
+Outputs: 
+- Class = {Filler, NoFiller/Canon, Unknown}
+
+Variables:
+- class0: String, identifies the 'unknown' class 
+- class1: String, identifies the 'Filler' class 
+- class2: String, identifies the 'NotFiller/Canon' class 
+- RatioOfFillerComments: Float, filler comments / total comments 
+- RatioOfFillerWords: Float, filler words / total words
+- commentsCount: int, total comments in the new episode
+- fillerCount: int, total count of filler words (recap, flashback, filler)
+- wordCount: int, total word count in the document
+- commentsWithFillerWords: int, comments that contain at least 1 filler word 
+----------------------------------------------------------------------------
+'''
+def classifyFillerOrCanon(probabilityOfFiller, document):
+
+	class0 = 'Unknown'
 	class1 = 'Filler'
 	class2 = 'Not Filler'
-	RatioOfFillerToCanonComments = 0
-	RatioOfFillerToCanonWords = 0
+	RatioOfFillerComments = 0
+	RatioOfFillerWords = 0
 
-	# create dictionary to store word and value pairs
-	counts = {}
 	commentsCount = 0;
 	fillerCount = 0;
 	wordCount = 0;
@@ -68,18 +102,21 @@ def classifyFillerOrCanon(ProbabilityOfFiller, document):
 	print " word count: " + str(wordCount)
 	print " filler words count " + str(fillerCount)
 
-	print "commentsCount: " + str(commentsCount)
-	print "commentsWithFillerWords " + str(commentsWithFillerWords)
+	print "Total comments: " + str(commentsCount)
+	print "Total comments with filler words " + str(commentsWithFillerWords)
 
 	try:
-		RatioOfFillerToCanonComments = (commentsWithFillerWords)/(commentsCount)
-		RatioOfFillerToCanonWords = (fillerCount)/(wordCount)
-		print "Ratio of filler to canon comments: " + str(RatioOfFillerToCanonComments)
-		print "Ratio of filler to canon words: " + str(RatioOfFillerToCanonWords)
+		RatioOfFillerComments = (commentsWithFillerWords)/(commentsCount)
+		RatioOfFillerWords = (fillerCount)/(wordCount)
+		print "Ratio of filler comments: " + str(RatioOfFillerComments)
+		print "Ratio of filler words: " + str(RatioOfFillerWords)
 	except ZeroDivisionError as e:
 		print "A wild DivisionByZeroException has appeared. There might not be comments to read yet!"
-
-	if(RatioOfFillerToCanonWords >= 0.027 and RatioOfFillerToCanonComments >= 0.20):
+		print "================================="
+		print "Episode is classified as UNKNOWN."
+		print "================================="
+		return class0
+	if(RatioOfFillerWords >= 0.027 and RatioOfFillerComments >= 0.20):
 		print "================================="
 		print "Episode is classified as FILLER."
 		print "================================="

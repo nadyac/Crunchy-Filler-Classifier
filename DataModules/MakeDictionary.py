@@ -26,9 +26,6 @@ def makeDict(dirPath):
 						# Create and open dictionary file for writing
 						dictfile = open(os.path.join(subdir, 'dict'+ file), 'w')
 
-						# create dictionary to store word and value pairs
-						#counts = {}
-
 						wordList =[]
 
 						# read from CSVfile and write to dictfile
@@ -52,35 +49,18 @@ def makeDict(dirPath):
 								word = ReplaceCharsInString.cleanString(word)
 								word = word.replace ("-", "")
 
-								# filter out words that don't add to the meaning of the comment
-								if word != 'i' and word != 'this' and word != 'that' and \
-								word != 'they' and word != 'we' and word != 'you' and \
-								word != 'me' and word != 'he' and word != 'she' and word != 'it' \
-								and word != 'them' and word != 'to' and word != 'for' and \
-								word != 'with' and word != 'have' and word != 'be' and \
-								word != 'been' and word != 'a' and word != 'or' and word != 'if'\
-								and word != 'are' and word != 'when' and word != 'the' and \
-								word != 'and' and word != 'in' and word != 'my' and word.find('@') == -1\
-								and word != 'at' and word != 'on' and word != 'there' and \
-								word != 'their' and word != 'theyre' and word != 'how' and word != 'as' \
-								and word != 'if' and word != 'was' and word != 'has' and word != 'had' \
-								and word != 'is' and word != " " and word.find('=') == -1 and word.find('_') == -1 \
-								and word.find('<') == -1 and word.find('>') == -1 and len(word) > 1 \
-								and word != 'of' and word != 'from':
+								# Unite filler and flashback counts since they tend to be correlated
+								if word.find('filler') != -1 or word.find('flashback') != -1 or word.find("recap") != -1:
+									fillerCount +=1
 
-									# Unite filler and flashback counts since they tend to be correlated
-									if word.find('filler') != -1 or word.find('flashback') != -1 or word.find("recap") != -1:
-										fillerCount +=1
+									if incrementFlag == False:
+										commentsWithFillerWords += 1
+										incrementFlag = True # so we won't increment anymore during this comment
 
-										if incrementFlag == False:
-											commentsWithFillerWords += 1
-											incrementFlag = True # so we won't increment anymore during this comment
-
-									#write key word to dictionary along with its key value
-									#counts[word] = counts.get(word, 0) + 1
-									wordList.append(word)
-									# increment word count so we know how many words are in all the comments for the episode
-									wordCount += 1
+								#write key word to dictionary along with its key value
+								wordList.append(word)
+								# increment word count so we know how many words are in all the comments for the episode
+								wordCount += 1
 						try:
 							print "total comments: " + str(commentsCount) + " times the word filler or flashback mentioned: " + \
 							str(fillerCount) + " comments with filler words: " + str(commentsWithFillerWords) + "\n"

@@ -135,5 +135,5 @@ def makeBagOfFillerWords(dirPath):
 		print "directory " + dirPath + " does NOT exist."
 	print "Done creating Bag of filler words txt file."
 
-dirPath = '..\DataExtractionModules\Shows\\'
+dirPath = '..\DataModules\Shows\\'
 makeBagOfFillerWords(dirPath)

@@ -1,10 +1,11 @@
-# MakeDictionary.py - create dictionary of all words in comments
+# MakePreDictionary.py - create file containing all words in comments
+#
 import os
 import sys
 import csv
 import ReplaceCharsInString
 
-# for each csv file, read the contents and create a dict file
+# for each csv file, read the contents and create a file with all the useful words
 def makeDict(dirPath):
 
 	# check that path exists, if so, continue, else stop
@@ -23,11 +24,8 @@ def makeDict(dirPath):
 					# Open each CSV file and read its contents
 					with open(os.path.join(subdir, file), 'r') as csvfile:
 
-						# Create and open dictionary file for writing
+						# Create and open pre-dictionary file for writing
 						dictfile = open(os.path.join(subdir, 'dict'+ file), 'w')
-
-						# create dictionary to store word and value pairs
-						#counts = {}
 
 						wordList =[]
 
@@ -76,8 +74,7 @@ def makeDict(dirPath):
 											commentsWithFillerWords += 1
 											incrementFlag = True # so we won't increment anymore during this comment
 
-									#write key word to dictionary along with its key value
-									#counts[word] = counts.get(word, 0) + 1
+									#write word to list
 									wordList.append(word)
 									# increment word count so we know how many words are in all the comments for the episode
 									wordCount += 1

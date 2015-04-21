@@ -18,7 +18,8 @@ def getComments(browser, episodeURL):
 		try:
 			i = i + 1
 			comment = n.text
-
+			print comment
+			
 		except UnicodeError as e:
 			comment = "UNICODE ERROR IN COMMENT"
 			print str(i) + "UNICODE ERROR IN COMMENT"

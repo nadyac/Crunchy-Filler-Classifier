@@ -9,6 +9,10 @@ import GetCrunchyComments
 import GetCrunchyShows
 import MakeCrunchyDirs
 import MakeCrunchyCSV
+import os
+import sys
+sys.path.insert(0, '../')
+from Classifiers import CrunchyFillerClassifier
 
 #------------------------------------------------------------------------
 # getLatestEpisode - Extracts the latest episode for the specified show
@@ -85,6 +89,8 @@ def extractData(show):
 		# Write the list of comments and episodes to a csv file
         MakeCrunchyCSV.writeToCSV(episodeTitle, episodesDir, listOfComments)
 
+    #Classify the episode
+    episodeClass = CrunchyFillerClassifier.classifyFillerOrCanon(0.25, listOfComments)
+
     browser.quit()
     print "Done."
-

@@ -7,7 +7,7 @@ import os
 import sys
 import csv
 sys.path.insert(0, '../')
-from DataExtractionModules import ReplaceCharsInString
+from DataModules import ReplaceCharsInString
 
 '''
 -------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ def makeBagOfFillerWords(dirPath):
 								and word.find('<') == -1 and word.find('>') == -1:
 
 									# Unite filler and flashback counts since they tend to be correlated
-									if word.find('filler') != -1 or word.find('flashback') != -1:
+									if word.find('filler') != -1 or word.find('flashback') != -1 or word.find("recap") != -1:
 										fillerCount +=1
 
 										if incrementFlag == False:

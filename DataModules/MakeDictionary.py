@@ -69,7 +69,7 @@ def makeDict(dirPath):
 								and word != 'of' and word != 'from':
 
 									# Unite filler and flashback counts since they tend to be correlated
-									if word.find('filler') != -1 or word.find('flashback') != -1:
+									if word.find('filler') != -1 or word.find('flashback') != -1 or word.find("recap") != -1:
 										fillerCount +=1
 
 										if incrementFlag == False:

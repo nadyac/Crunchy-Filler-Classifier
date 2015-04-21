@@ -10,8 +10,8 @@ def hello_world():
 def python_function(name):
     extractData(name)
     
-    return ''
+    #return ''
+    return app.send_static_file("shows.html")
     
-
 if __name__ == '__main__':
     app.run(debug=True)

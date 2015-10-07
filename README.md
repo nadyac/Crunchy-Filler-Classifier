@@ -9,6 +9,6 @@ filler episode or not. Then it sends you back the results.
 ### What do I need to run this project on my machine?
 This project requires Python 2.7, Selenium, Mechanize, and Flask in order to run. If you have pip installed then obtaining all the necessary components is only a matter of running "pip install Selenium", "pip install Mechanize", and "pip install Flask" in your terminal.
 
-This is my Spring 2015 Software Engineering project
+This is my Spring 2015 Software Engineering project.
 
 
